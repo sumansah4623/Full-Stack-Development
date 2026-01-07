@@ -1,0 +1,36 @@
+
+body {
+    background-color: rgb(193, 240, 225);
+}
+
+
+h1{
+    text-align: left;
+    color: black;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-display: block;
+}
+
+.headtext{
+        color: brown;
+        text-align: left;
+        font-size: large;
+        font-weight: 600;   
+}
+
+
+h3{
+    color: rgb(49, 49, 215);
+    font-size: large;
+    font-weight: bold;
+}
+
+
+
+#intro {
+    color: blue;
+    font-size: large;
+    font-weight: 700;
+    
+}
