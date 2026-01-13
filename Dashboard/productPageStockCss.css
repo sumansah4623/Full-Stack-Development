@@ -1,0 +1,124 @@
+body {
+    background: #58bfdf;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 80px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar-icons i,
+.sidebar-bottom i {
+    font-size: 20px;
+    color: #b0b3c6;
+    margin: 18px 0;
+    cursor: pointer;
+}
+
+.sidebar-icons .active {
+    color: #4f46e5;
+}
+
+/* MAIN */
+.main-content {
+    padding: 30px;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+}
+
+.search-box {
+    width: 280px;
+    border-radius: 20px;
+}
+
+.notify-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* TABLE */
+.table-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.product-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+/* COLORS */
+.color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.black { background: #000; }
+.gray { background: #aaa; }
+.pink { background: #f28b82; }
+.red { background: #e53935; }
+.blue { background: #1e88e5; }
+.yellow { background: #fbc02d; }
+.purple { background: #8e24aa; }
+.sky { background: #64b5f6; }
+.navy { background: #3949ab; }
+
+/* ACTION BUTTONS */
+.icon-btn {
+    border: none;
+    background: #f1f3f8;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-right: 6px;
+}
+
+.icon-btn.delete {
+    color: #e53935;
+}
+
+/* FOOTER */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    color: #777;
+}
+
+.page-btn {
+    border: none;
+    background: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-left: 5px;
+}

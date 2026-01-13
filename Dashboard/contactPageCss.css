@@ -1,0 +1,33 @@
+body {
+    background-color: #a1d1cd;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Card Styling */
+.contact-card {
+    border: none;
+    border-radius: 80px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.contact-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin-bottom: 5px;
+}

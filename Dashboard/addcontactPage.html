@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="addcontactPageCss.css">
+</head>
+<body>
+
+    <!--Main container-->
+    <div class = "container py-4">
+
+        <h2 class = "fw-bold mb-4">Add New Contact</h2>
+
+        <!-- Card wrapper for form -->
+        <div class = "form-card mx-auto">
+
+            <!--upload photo section-->
+            <div class = "text-center mb-4">
+                <div class = "upload-circle mx-auto">
+                    📷
+                </div>
+            </div>
+
+
+
+            <!-- Contact form -->
+            <form>
+                <!-- First name input -->
+                <div class = "col-md-6">
+                    <label class = "form-label">First Name</label>
+                    <input type = "text" class = "form-control" placeholder="Enter your first name">
+                </div>
+
+                <!-- Last name input -->
+                <div class = "col-md-6">
+                    <label class = "form-label">Last Name</label>
+                    <input type="text" class = "form-control" placeholder="Enter Your Last Name">
+                </div>
+
+                <!--Email input-->
+                <div class = "col-md-6">
+                    <label class = "form-label">Email</label>
+                    <input type = "text" class = "form-control" placeholder="Enter Your Email">
+                </div>
+
+
+                <!--Mobile input-->
+                <div class = "col-mob-6">
+                    <label class = "form-label">Phone Number</label>
+                    <input type = "text" class = "form-control" placeholder="Enter Your Mobile Number">
+                </div>
+
+
+                <!--Date of Birth-->
+                <div class = "col-mob-6">
+                    <label class = "form-label">Date Of Birth</label>
+                    <input type = "text" class = "form-control" placeholder="Enter Your Date of Birth">
+                </div>
+
+
+                <!--Gender Selection-->
+                <div class = "col-mob-6">
+                    <label class = "form-label">Gender</label>
+                    <select class = "form-select">
+                        <option selected>Male</option>
+                        <option>Female</option>
+                        <option>other</option>
+                    </select>
+                </div>
+
+
+                <!-- Submit button -->
+                <div class = "text-center mt-5">
+                    <button type="submit" class = "btn add-btn px-5">
+                        Add Now
+                    </button>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+
+</body>
+</html>
