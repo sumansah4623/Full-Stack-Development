@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <script> tag → Bridge that allows JavaScript to run inside HTML-->
+        <script>
+            function myFunction() {
+                document.getElementById('demo').innerHTML = "Paragraph Changed.";
+            }
+        </script>    
+    </head>
+    <body>
+        <h2>JavaScript Code in Head</h2>
+        <p id = 'demo'>A Paragraph</p>
+
+
+        <!--Button tag Call JavaScript Function-->
+        <button
+           type="button"
+           onclick="myFunction()">
+           Click Here And Try it
+        </button>   
+    </body>
+</html>

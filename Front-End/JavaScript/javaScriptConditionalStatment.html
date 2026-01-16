@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Conditional Statement</title>
+    </head>
+    <body>
+        <h1>JavaScript if Conditional Statement</h1>
+        <p>Display "Good day!" if the hour is less than 18:00:</p>
+
+
+        <p id = 'demo'>Good Night</p>
+
+
+
+        <!--Script tag contain javascript code-->
+        <script>
+            if(new Date().getHours() < 18)
+            {
+                document.getElementById('demo').innerHTML = "Good Day!";
+            }
+        </script>
+    </body>
+</html>

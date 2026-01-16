@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScript Code in Body</title>
+</head>
+<body>
+
+    <h2>Demo JavaScript in Body</h2>       <!--header that show on page-->
+    <p id = "demo">A Paragraph.</p>        <!--paragraph that show on page-->
+
+
+    <!--Button tag that call function of JavaScript-->
+    <button                              
+      type="button"
+      onclick="myFunction()">
+      Click Here
+    </button>
+
+
+    <!--Script tag Contain javaScript code-->
+    <script>
+        function myFunction() 
+        {
+            document.getElementById('demo').innerHTML = "Paragraph Changed.";
+        }
+    </script>
+      
+</body>

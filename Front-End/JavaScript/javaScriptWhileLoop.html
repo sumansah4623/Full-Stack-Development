@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript While Loop</title>
+    </head>
+    <body>
+        <h1>JavaScript While Loop.</h1>
+        <p id = 'demo'></p>
+
+        <!--Script tag Contain JavaScript code-->
+        <script>
+            let text = "";
+            let i = 0;
+            while(i < 10)
+            {
+                text = text + "the number is " + i + "<br>";
+                i++;
+            }
+
+            document.getElementById('demo').innerHTML = text;
+        </script>
+    </body>
+</html>
