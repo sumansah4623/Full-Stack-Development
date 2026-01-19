@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript IIFEs</title>
+    </head>
+
+    <body>
+        <h1>IIFEs (Immediately Invoked Function Expressions)</h1>
+        <p>Functions can be invoked automatically without being called: </p>
+
+        <p id = "demo"></p>
+
+        <script>
+            (function () {
+                let text = "Hello ! I Called myself"; document.getElementById("demo").innerHTML = text;
+            }) ();
+        </script>
+
+    </body>
+</html>

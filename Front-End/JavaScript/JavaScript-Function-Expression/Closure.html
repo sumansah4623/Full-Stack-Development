@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Closure</title>
+    </head>
+
+    <body>
+        <h1>JavaScript Closure</h1>
+        <p>Counting With Local Varibale.</p>
+
+
+        <!--paragraph that display 0 on web page-->
+        <p id = "demo">0</p>
+        
+        <!--Button tag-> by clicling this button you can increase counting-->
+        <button
+           type="button"
+           onclick="myFunction()">
+           Click Here Count 
+        </button>
+
+
+
+        <!--JavaScript code under script tag-->
+        <script>
+            function myCounter()
+            {
+                let counter = 0;
+                return function()
+                {
+                    counter++;
+                    return counter;
+                };
+            }
+
+            const add = myCounter();
+
+            function myFunction()
+            {
+                document.getElementById("demo").innerHTML = add();
+            }
+        </script>
+    </body>
+</html>
