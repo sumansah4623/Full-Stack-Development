@@ -21,3 +21,34 @@ React is a tool for building UI components.
 ->React creates a VIRTUAL DOM in memory.
 ->Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
 ->React only changes what needs to be changed!
+
+
+
+
+
+->>Setting Up a React Application on a Fresh System
+
+This document provides a step-by-step guide to set up a React application on a newly installed system. You can copy-paste this directly into Notion and customize it as needed.
+
+
+->System Prerequisites
+Ensure the following tools are installed on your system:
+✅ Operating System
+- macOS / Linux / Windows 10+
+
+✅ Node.js & npm
+- Required Node.js version: v18.x or above
+- npm comes bundled with Node.js
+
+
+
+
+Practical
+->Create a New React Application
+
+You can create a React app using any of the following methods:
+🅰️ Option 1: Create React App (CRA)
+bash
+run-> npx create-react-app my-app
+run ->cd my-app
+run ->npm start
