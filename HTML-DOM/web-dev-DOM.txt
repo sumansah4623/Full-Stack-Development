@@ -1,0 +1,57 @@
+HTML DOM (Document Object Model)
+
+The HTML DOM (Document Object Model) is a structured representation of a web page that allows developers to access, modify, and control its content and structure using JavaScript. It powers most dynamic website interactions, enabling features like real-time updates, form validation, and interactive user interfaces.
+
+
+
+->The HTML Document Object Model (DOM) is a tree structure, where each HTML tag becomes a node in the hierarchy.
+
+->At the top, the <html> tag is the root element, containing both <head> and<body> as child elements.
+
+->These in turn have their own children, such as <title>, <div>, and nested elements like <h1>, <p>,<ul>, and<li>.
+
+->Elements that contain other elements are labeled as container elements, while elements that do not are simply child elements.
+
+->This hierarchy allows developers to navigate and manipulate web page content using JavaScript by traversing from parent to child and vice versa.
+
+
+Structure of the HTML DOM
+Imagine your webpage as a tree:
+
+The document is the root.
+HTML tags like <html>, <head>, and <body> are branches.
+Attributes, text, and other elements are the leaves.
+Requirement of DOM
+The DOM is essential because:
+
+Dynamic Content Updates: Without reloading the page, the DOM allows content updates (e.g., form validation, AJAX responses).
+User Interaction: It makes your webpage interactive (e.g., responding to button clicks, form submissions).
+Flexibility: Developers can add, modify, or remove elements and styles in real-time.
+Cross-Platform Compatibility: It provides a standard way for scripts to interact with web documents, ensuring browser compatibility.
+Working of DOM
+The DOM connects your webpage to JavaScript, allowing you to:
+
+Access elements (like finding an <h1> tag).
+Modify content (like changing the text of a <p> tag).
+React to events (like a button click).
+Create or remove elements dynamically.
+
+
+
+-->Types of DOM
+The DOM is seperated into 3 parts:
+
+Core DOM: It is standard model for all document types(All DOM implementations must support the interfaces listed as "fundamental" in the code specifications).
+XML DOM: It is standard model for XML Documents( as the name suggests, all XML elements can be accessed through the XML DOM .)
+HTML DOM: It is standard model for HTML documents (The HTML DOM is a standard for how to get, change, add, or delete HTML elements.)
+Properties of the DOM
+Node-Based: Everything in the DOM is represented as a node (e.g., element nodes, text nodes, attribute nodes).
+Hierarchical: The DOM has a parent-child relationship, forming a tree structure.
+Live: Changes made to the DOM using JavaScript are immediately reflected on the web page.
+Platform-Independent: It works across different platforms, browsers, and programming languages.
+The Document
+The Document the interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM includes elements such as <body> and <table> etc. as nodes. It provides various functionality globally to the document, for example how to obtain the page's URL or create new elements in the document.
+
+The-Document
+The Document
+HTML documents served with the "text/html" content-type, also implement the HTMLDocument interface, whereas XML and SVG documents implement the XMLDocument interface.

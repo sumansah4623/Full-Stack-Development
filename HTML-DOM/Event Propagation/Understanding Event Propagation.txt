@@ -1,0 +1,8 @@
+Understanding Event Propagation
+Event propagation refers to the way events "bubble" up or "capture" down the DOM tree. In the HTML DOM, there are two primary ways an event can propagate when it occurs: Event Bubbling and Event Capturing. These concepts determine the order in which events are handled when an event is triggered on nested elements.
+
+Event Bubbling
+In Event Bubbling, the event starts from the innermost element (the target element) and bubbles up to the outer elements. This means that if you click on an element inside a parent element, the innermost element's event handler is triggered first, followed by the outer elements' handlers.
+
+Event Capturing
+In Event Capturing, the event starts from the outermost element (usually the document or window) and captures down to the target element. In this case, the outermost element's event handler is triggered first, and the event then "trickles down" to the inner elements.

@@ -1,0 +1,53 @@
+<!-- In Event Capturing, the event starts from the outermost element (usually the document or window) 
+and captures down to the target element. In this case, the outermost element's event handler is triggered first, 
+and the event then "trickles down" to the inner elements. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Bubbling vs Capturing</title>
+    <style>
+        /*  CSS styling  */
+        #parent {
+            background-color: aqua;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        #child {
+            background-color: blue;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Parent element -->
+    <div id = "parent">
+        <!-- Child element -->
+        <p id = "child">Click Me</p>
+    </div>
+
+
+    <!--JavaScript code under Script tag of html-->
+    <script>
+        const parent = document.getElementById('parent');
+        const child = document.getElementById('child');
+
+
+        //Capturing phase (top → down)
+        parent.addEventListener('click', function () {
+            alert('Parent Div Capturing (Capturing Phase)')
+        }, true);
+
+
+        // Bubbling phase (bottom → up)
+        child.addEventListener('click' , function () {
+            alert('Child Div Capturing (bubbling Phase)')
+        });
+    </script>
+    
+</body>
+</html>
