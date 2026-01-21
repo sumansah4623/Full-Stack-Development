@@ -1,3 +1,6 @@
+import "./BookDetails.css";
+
+
 function BookDetails({ book, onBack}) {
     return (
         <div className="card p-4">

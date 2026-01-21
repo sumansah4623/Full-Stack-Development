@@ -41,9 +41,26 @@ Ensure the following tools are installed on your system:
 - npm comes bundled with Node.js
 
 
+--> Diffing Algorithm 
+Diffing Algorithm in React JS differentiates the updated and previous DOM of the application. DOM stores the components of a website in a tree structure. React uses virtual DOM which is a lightweight version of the DOM. The only difference is the ability to write the screen like the real DOM, in fact, a new virtual DOM is created after every re-render.
 
 
-Practical
+Why is the Diffing Algorithm Important?
+Manipulating the DOM is one of the most performance-intensive operations in web development. Updating the entire DOM every time there’s a change would significantly slow down applications. The diffing algorithm ensures that only the minimum required updates are made, leading to:
+
+Improved performance: By limiting DOM manipulations, the application runs faster.
+Smooth user experience: Users experience fewer lags, even in dynamic applications.
+Optimized rendering: React can handle frequent updates in real-time without performance bottlenecks.
+How Diffing Algorithm Works?
+First, the content is rendered on the webpage and the DOM tree is created.
+On change in any content due to user interaction or change in data from API, React works on observable patterns, hence, whenever there is a change in the state, it updates the nodes in the virtual DOM
+In reconciliation the old tree is compared to the newest version to determine the number of changes needed for updation.
+After determining the changes a set of optimized and minimal instruction is created to implement on the real DOM.
+These changes are then implemented and only content that changed is re-rendered on the web pages
+
+
+
+Practical example
 ->Create a New React Application
 
 You can create a React app using any of the following methods:
@@ -52,3 +69,16 @@ bash
 run-> npx create-react-app my-app
 run ->cd my-app
 run ->npm start
+
+
+
+Here are the exact commands for Vite + React 👇
+
+🚀 Create Vite + React Project
+npm create vite@latest my-app
+
+When prompted, choose:
+✔ Select a framework: React
+✔ Select a variant: JavaScript
+cd my-app
+npm run dev

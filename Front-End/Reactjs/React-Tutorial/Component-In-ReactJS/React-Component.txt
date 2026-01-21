@@ -1,5 +1,8 @@
 React Component
 
+-Components are like functions that return HTML elements.
+-Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
 React components are reusable UI units that handle their own logic, accept data through props, manage state, and efficiently update only the parts of the UI that change.
 
 User Action triggers an event (click, input, etc.).
