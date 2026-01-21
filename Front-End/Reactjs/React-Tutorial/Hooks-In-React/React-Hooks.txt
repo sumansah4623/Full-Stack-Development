@@ -1,0 +1,23 @@
+React Hooks
+
+Hooks allow functions to have access to state and other React features without using classes.
+
+They provide a more direct API to React concepts like props, state, context, refs, and lifecycle.
+
+Hooks are functions that let you "hook into" React state and lifecycle features from functional components.
+
+You must import Hooks from react.
+
+Here we are using the useState Hook to keep track of the application state.
+
+Hook Rules
+There are 3 rules for hooks:
+
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional
+
+
+Type:-
+1.React useState Hook
+2.React useEffect Hook
