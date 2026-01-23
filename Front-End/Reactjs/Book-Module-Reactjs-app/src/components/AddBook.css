@@ -1,0 +1,81 @@
+.add-book-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+}
+
+.add-book-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.add-book-card h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.add-book-card label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 500;
+}
+
+.add-book-card input,
+.add-book-card textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+}
+
+.add-book-card textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* ✅ Custom row (does NOT conflict with Bootstrap .row) */
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  flex: 1;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
