@@ -34,6 +34,14 @@
   border-radius: 8px;
   border: 1px solid #dcdcdc;
   font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-book-card input:focus,           
+.add-book-card textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
 .add-book-card textarea {
@@ -41,7 +49,6 @@
   height: 90px;
 }
 
-/* ✅ Custom row (does NOT conflict with Bootstrap .row) */
 .form-row {
   display: flex;
   gap: 16px;
@@ -51,10 +58,10 @@
   flex: 1;
 }
 
-.buttons {
-  display: flex;
-  gap: 12px;
+.button-group {
   margin-top: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .btn-primary {
@@ -62,7 +69,7 @@
   background: #2563eb;
   color: #ffffff;
   border: none;
-  padding: 12px;
+  padding: 14px;
   border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
@@ -73,9 +80,41 @@
 }
 
 .btn-secondary {
+  flex: 1;
   background: #ffffff;
   border: 1px solid #dcdcdc;
-  padding: 12px 18px;
+  padding: 14px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+.input-error:focus {
+  border-color: red !important;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.15);
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 280px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 12px auto;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }

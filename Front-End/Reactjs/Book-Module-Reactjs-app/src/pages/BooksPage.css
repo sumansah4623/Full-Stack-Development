@@ -1,0 +1,19 @@
+.add-book-btn {
+  background-color: #2563eb;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  margin-left: 800px;
+}
+
+.add-book-btn:hover {
+  background-color: #231dd8;
+  transform: translateY(-1px);
+}
+
+.add-book-btn:active {
+  transform: scale(0.97);
+}

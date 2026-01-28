@@ -1,127 +1,97 @@
-// It is the main page of your books app
-// It decides what to show:
-// Book list OR
-// Book details
-
-
-
-/* useState is a React Hook
-   It helps us store data that can change (state).
-   Which book is selected? → This can change → so we use useState. 
-
-   books is usually an array of objects
-   These are own components
-   BookList → shows all books
-   BookDetails → shows details of one book
-
-
-   useState 
-   const [selectedBook, setSelectedBook] = useState(null);
-   selectedBook → stores the currently selected book
-   setSelectedBook → function to change selectedBook
-   null → initially no book is selected
-   <> </> is called a Fragment
-   It allows multiple elements without extra HTML
-
-   <div className="container mt-4">
-   Bootstrap classes:
-   container → center layout
-   mt-4 → margin top
-
-
-   useState → React Hook used to store and update data (state)
-   books → Dummy book data (array of book objects)
-   BookList → Component that shows all books
-   BookDetails → Component that shows details of one selected book
-
-   BooksPage Component
-   function BooksPage() {
-   selectedBook is a state variable
-   This is a functional component.
-   It controls which screen to show:
-   Book list OR
-   Book details
-
-
-   IF a book is selected → show book details
-   ELSE → show the list of books
-
-   book={selectedBook}
-   Meaning:
-   book → prop name
-   selectedBook → value (state)
-
-
-   This line is importing a React Hook called useState.
-   import { useState } from "react";
-
-   useState helps you:
-   store values (like numbers, strings, objects)
-   change the UI when those values change
-
-
-   const [selectedBook, setSelectedBook] = useState(null);
-   What this line does
-   It creates a state variable to store the currently selected book.
-
-*/
-
-
-
-
-import { useState } from "react";
-import books from "../data/books";
+import { useState, useEffect } from "react";
 import BookList from "../components/BookList";
 import BookDetails from "../components/BookDetails";
 import AddBook from "../components/AddBook";
+import "./BooksPage.css";
 
 
 function BooksPage() {
 
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [showAddBook, setShowAddBook] = useState(false);
+  const [books, setBooks] = useState(() => {
+    const savedBooks = localStorage.getItem("books");
+    return savedBooks ? JSON.parse(savedBooks) : [];
+  });
 
 
-  if(showAddBook) {
-    return <AddBook onCancel = {() => setShowAddBook(false)} />
+  const [view, setView] = useState("list"); 
+  const [activeBook, setActiveBook] = useState(null);
+
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
+
+
+  const handleAddBook = (book) => {
+    setBooks((prev) => [...prev, book]);
+    setView("list");
+  };
+
+  
+  const handleUpdateBook = (updatedBook) => {
+    setBooks((prev) =>
+      prev.map((book) =>
+        book.id === updatedBook.id ? updatedBook : book
+      )
+    );
+    setView("list");
+  };
+
+  
+  const handleDeleteBook = (id) => {
+    setBooks((prev) => prev.filter((book) => book.id !== id));
+    setView("list");
+  };
+
+
+  if (view === "add" || view === "edit") {
+    return (
+      <AddBook
+        initialData={view === "edit" ? activeBook : null}
+        onAddBook={view === "edit" ? handleUpdateBook : handleAddBook}
+        onCancel={() => setView("list")}
+      />
+    );
+  }
+
+  
+  if (view === "details") {
+    return (
+      <BookDetails
+        book={activeBook}
+        onBack={() => setView("list")}
+        onDelete={handleDeleteBook}
+        onEdit={(book) => {
+          setActiveBook(book);
+          setView("edit");
+        }}
+      />
+    );
   }
 
 
-  if (selectedBook) {
-    return (
-      <div className="container mt-4">
-        <h2 className="mb-4">Book Collection</h2>
+  return (
+    <div className="container mt-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2>Book Collection</h2>
 
-        <BookDetails
-          book={selectedBook}
-          onBack={() => setSelectedBook(null)}
-        />
+        <button
+          className="btn btn-primary add-book-btn"
+          onClick={() => setView("add")}
+        >
+          + Add New Book
+        </button>
       </div>
-    );
-  } else {
-    return (
-      <div className="container mt-4">
 
-        <div className="d-flex justify-content-between align-items-center mb-4">
-           <h2>Book Collection</h2>
-          
-          <div>
-           <button 
-              className="btn btn-primary px-4"
-              onClick={() => setShowAddBook(true)}>
-                + Add New Book
-           </button>  
-          </div>
-        </div>   
-
-        <BookList
-          books={books}
-          onSelect={setSelectedBook}
-        />
-      </div>
-    );
-  }
+      <BookList
+        books={books}
+        onSelect={(book) => {
+          setActiveBook(book);
+          setView("details");
+        }}
+      />
+    </div>
+  );
 }
-
 
 export default BooksPage;
