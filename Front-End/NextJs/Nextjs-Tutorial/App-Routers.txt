@@ -1,0 +1,145 @@
+--->>Next JS 13 App Router
+
+Routing refers to the process of determining how an application responds to a client request 
+to a particular endpoint or URL. 
+When a user clicks a link, enters a URL in the browser, or performs some action 
+that changes the current URL, the routing mechanism decides which content or 
+component to display on the page.
+
+
+In this article, we will learn about Next.js 13 App router. 
+Routing is an important concept in building single-page applications (SPAs) 
+and dynamic web applications where navigating between pages updates the content 
+on the page without a full reload, providing a smoother and more seamless user experience.
+
+
+
+Next.js 13 App Router Usage
+Next.js 13 App Router provides Hierarchical File Structure routing. 
+which provides features such as shared layout, nested routing, loading states, error handling,
+404 not found page, and many more.
+
+Next.js 13 uses File System based routing in which App Router works in a /app directory. 
+In this directory, Folders are used to define the route and nested route, 
+and in that folders files such as page.js, error.js, layout.js,, and loading.js are used to create UI components.
+
+
+
+
+page.js File & Nested Routing
+A page.js is a component that contains a UI elements, 
+which are displayed when you move to any route. Next.js 13 App Router automatically consider 
+the page.js file when you move to any route and content of it is rendered on display. 
+This file is not optional.
+
+Nested Route is a route that is contained within another route. 
+This allows you to create a hierarchy of routes, 
+which can be useful for organizing your application's content.
+
+For example, you have created a cloths folder in a app directory and 
+inside that folder you have created a men and women folder and inside both the folder 
+you have created a page.js component. So if you want to open men cloths section 
+you can access it by using http://localhost:3000/cloths/men and if you want to open women 
+cloths section you can access it by using http://localhost:3000/cloths/women and the content 
+written inside page.js will be displayed.
+
+
+
+
+
+Example:-
+app/
+ ├─ page.js        → http://localhost:3000
+ ├─ about/page.js  → http://localhost:3000/about
+ ├─ contact/page.js→ http://localhost:3000/contact
+
+
+app/page.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+    </div>
+  );
+}
+
+
+✔ This is your Home page
+✔ It loads at:
+
+http://localhost:3000
+
+2️⃣ Dev server running
+
+Terminal shows:
+
+Next.js 16.1.6
+Ready
+GET / 200
+
+
+Means Next.js is running correctly
+
+Next Step: Create MORE pages (practice)
+
+You do NOT create random JS files.
+You create folders inside app/.
+
+🧩 Step 1: Create About page
+Folder structure
+app/
+ ├─ page.js
+ └─ about/
+     └─ page.js
+
+Code: app/about/page.js
+export default function About() {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>This is my second Next.js page.</p>
+    </div>
+  );
+}
+
+Open in browser
+http://localhost:3000/about
+
+🧩 Step 2: Create Contact page
+app/
+ └─ contact/
+     └─ page.js
+
+export default function Contact() {
+  return (
+    <div>
+      <h1>Contact Page</h1>
+      <p>Learning Next.js 🚀</p>
+    </div>
+  );
+}
+
+
+URL:
+
+http://localhost:3000/contact
+
+🔗 Step 3: Add navigation (VERY IMPORTANT)
+
+Update home page:
+
+app/page.js
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+
+      <ul>
+        <li><Link href="/about">About</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
+      </ul>
+    </div>
+  );
+}

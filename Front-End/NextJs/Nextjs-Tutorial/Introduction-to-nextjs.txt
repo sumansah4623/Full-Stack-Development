@@ -5,10 +5,27 @@ Server-Side Rendering (SSR) & Static Site Generation (SSG) improves SEO and perf
 Offers automatic bundling, code splitting, and asset optimization.
 Suitable for both small projects and enterprise-grade applications with full-stack support.
 
+->Next.js can be used for both frontend (UI) and backend (API routes), making it a full-stack framework.
+->Server-Side Rendering (SSR) Pages are generated on the server at request time, giving better SEO and performance.
+->Static Site Generation (SSG) Pages can be pre-built at build time for faster loading and scalability.
+->It simplifies routing, styling, and performance so beginners can build modern apps without extra setup.
+
+Next.js Framework
+Provides Routing (file-based system for pages).
+Supports Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR) to improve performance and SEO.
+Works as the bridge between backend logic and frontend rendering.
+
+Browser (Client-Side)
+The final HTML, CSS, and JavaScript are delivered to the user’s browser.
+Thanks to Next.js optimizations and CDN support, users see a fast, SEO-friendly, and interactive web app
+
 Next.js is a framework built on top of React that makes it easier to create fast and modern websites. It handles things like page rendering, routing, and performance automatically, so developers can focus on building features.
 
 
 Installation
+System Requirements:
+Node.js 12.22.0
+NPM 6.14.4 
 npx create-next-app@latest
 
 
@@ -25,3 +42,184 @@ Would you like your code inside a `src/` directory? No / Yes
 Would you like to use App Router? (recommended) No / Yes
 Would you like to customize the import alias (`@/*` by default)? No / Yes
 What import alias would you like configured? @/*
+
+
+
+
+cd my-app
+npm run dev
+
+
+Open this file:
+app/page.js
+
+
+
+
+
+app/
+ ├─ page.js        → http://localhost:3000
+ ├─ about/page.js  → http://localhost:3000/about
+ ├─ contact/page.js→ http://localhost:3000/contact
+
+
+app/page.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+    </div>
+  );
+}
+
+
+✔ This is your Home page
+✔ It loads at:
+
+http://localhost:3000
+
+2️⃣ Dev server running
+
+Terminal shows:
+
+Next.js 16.1.6
+Ready
+GET / 200
+
+
+✔ Means Next.js is running correctly
+
+🚀 Next Step: Create MORE pages (practice)
+
+You do NOT create random JS files.
+You create folders inside app/.
+
+🧩 Step 1: Create About page
+Folder structure
+app/
+ ├─ page.js
+ └─ about/
+     └─ page.js
+
+Code: app/about/page.js
+export default function About() {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>This is my second Next.js page.</p>
+    </div>
+  );
+}
+
+Open in browser
+http://localhost:3000/about
+
+🧩 Step 2: Create Contact page
+app/
+ └─ contact/
+     └─ page.js
+
+export default function Contact() {
+  return (
+    <div>
+      <h1>Contact Page</h1>
+      <p>Learning Next.js 🚀</p>
+    </div>
+  );
+}
+
+
+URL:
+
+http://localhost:3000/contact
+
+🔗 Step 3: Add navigation (VERY IMPORTANT)
+
+Update home page:
+
+app/page.js
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+
+      <ul>
+        <li><Link href="/about">About</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
+      </ul>
+    </div>
+  );
+}
+
+
+
+
+
+
+React Vs Next.js
+Both are popular choices for web development, but they serve different purposes and offer different levels of functionality.
+
+React.js:
+
+A JavaScript library used mainly for building UI components on the client-side.
+Handles only the frontend, needs extra setup for routing, SEO, and backend features.
+Example of building a blog page with Reactjs:
+
+
+// React.js
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+function Blog() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/posts")
+      .then(res => res.json())
+      .then(data => setPosts(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>My Blog</h1>
+      {posts.map(post => <p key={post.id}>{post.title}</p>)}
+    </div>
+  );
+}
+
+export default Blog;
+You create a Blog.js component.
+To handle routing, you install a separate package like React Router.
+To fetch blog posts, you use useEffect() and fetch() inside the component.
+The page is rendered on the client-side, so search engines may not immediately see the content (bad for SEO)
+In React.js, you need extra libraries (like React Router) and client-side fetching, which can hurt SEO.
+
+Next.js:
+
+A React-based framework that supports SSR (Server-Side Rendering) and SSG (Static Site Generation).
+Provides built-in routing, SEO optimization, and full-stack capabilities out of the box.
+Example:
+
+
+// Next.js
+export default function Blog({ posts }) {
+  return (
+    <div>
+      <h1>My Blog</h1>
+      {posts.map(post => <p key={post.id}>{post.title}</p>)}
+    </div>
+  );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch("https://example.com/api/posts");
+  const posts = await res.json();
+  return { props: { posts } };
+}
+You create a pages/blog.js file.
+Routing is automatic (no need for React Router).
+Data fetching can be done with getServerSideProps() or getStaticProps().
+The page is pre-rendered on the server-side, so search engines see the content immediately (good for SEO).
+In Next.js, you get built-in routing and server-side rendering, making your app faster and SEO-friendly with less setup.
