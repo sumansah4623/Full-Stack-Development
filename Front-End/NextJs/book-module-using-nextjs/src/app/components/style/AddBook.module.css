@@ -1,0 +1,135 @@
+.addBookContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+
+.addBookCard {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.addBookCard h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.addBookCard label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+}
+
+
+.addBookCard input,
+.addBookCard textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+.addBookCard input:focus,
+.addBookCard textarea:focus {
+  border-color: #2563eb;
+}
+
+
+.addBookCard input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+:global(.row) {
+  display: flex;
+  gap: 16px;
+}
+
+:global(.row > div) {
+  flex: 1;
+}
+
+
+:global(.input-error) {
+  border-color: #ef4444 !important;
+}
+
+:global(.error-text) {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+
+:global(.image-preview) {
+  display: block;
+  margin: 14px auto 20px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+:global(.button-group) {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+
+:global(.btn-primary) {
+  flex: 1;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+:global(.btn-primary:hover) {
+  background: #1d4ed8;
+}
+
+
+:global(.btn-secondary) {
+  background: #f3f4f6;
+  color: #111827;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+:global(.btn-secondary:hover) {
+  background: #e5e7eb;
+}
