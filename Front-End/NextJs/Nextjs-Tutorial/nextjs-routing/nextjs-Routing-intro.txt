@@ -1,0 +1,99 @@
+Next.js Routing
+
+
+Routing in Next.js is a built-in, file-based system that automatically maps URLs to files and folders, making navigation simple, fast, and efficient without extra libraries.
+
+Uses file-based routing via the pages/ or app/ directory with no extra setup.
+Supports dynamic and nested routes through folder and file naming.
+Provides fast navigation using the built-in Link component with preloading.
+Allows redirects, SEO-friendly URLs, and optimized performance by default.
+Types of Routes in Next.js
+Next.js provides a powerful file-based routing system that supports static, dynamic, nested, and API routes. This makes navigation easy to implement without relying on external libraries.
+
+
+
+
+
+
+
+
+Types of Routes in Next.js
+Next.js provides a powerful file-based routing system that supports static, dynamic, nested, and API routes. This makes navigation easy to implement without relying on external libraries.
+
+types_of_routes_in_next_js
+1. Static Routes
+A static route in Next.js is created by adding a file with a fixed name inside the pages/ or app/ directory, which automatically maps to a URL.
+
+Example: We create a file in the pages directory named index.js.
+
+// pages/index.js
+
+const Home = () => { 
+    return(
+        <div>
+            Home Page
+        </div>
+    );
+}
+export default Home;
+It could be accessed by going to http://localhost:3000/
+
+2. Nested Routes
+A nested route in Next.js is created by placing a file inside a subfolder, which maps to a hierarchical URL path automatically.
+
+Example: Create a new folder named users and add a file called about.js inside it.
+
+// pages/user/about.js
+
+const About = () => { 
+    return(
+        <div>
+            About Page
+        </div>
+    );
+}
+export default About;
+We can access this file by visiting http://localhost:3000/users/about.
+
+3. Dynamic Routes
+Dynamic Routes in Next.js allow you to create routes with variable path segments by using square brackets (e.g., [id].js), enabling pages to render dynamically based on the URL.
+
+Example: Creating a file named [id].js inside the pages directory.
+
+// pages/users/[id].js
+
+import { useRouter } from 'next/router';
+
+const User= () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return <p>User: {id}</p>;
+};
+
+export default User;
+It allows the component to access the dynamic id parameter and render content accordingly by visiting localhost:3000/<any-id>.
+
+4. API Routes
+API Routes in Next.js allow you to build backend endpoints inside the application by creating files in the pages/api directory, enabling server-side logic without a separate backend.
+
+// Filename : pages/api/hello.js
+
+export default function handler(req, res) {
+    res.status(200).json({ message: 'Hello, world!' });
+}
+Advanced Routing
+Advanced routing in Next.js includes features like catch-all routes, optional catch-all routes, nested layouts, parallel routes, and intercepting routes (in Next.js 13+). These features give developers more flexibility and control over complex navigation flows.
+
+5. Catch-All Routes
+We can catch all paths in Next.js using catch-all routes. For this, we have to add three dots inside the square brackets in the name of the file as shown below:
+
+./pages/[...file_name].js
+6. Optional Catch-All Routes
+Optional catch-all routes in Next.js handle URLs with zero or more dynamic path segments.
+
+Created using double square brackets with three dots: [[...slug]].js
+Match multiple route patterns, including the base path with no segments.
+Example:
+
+./pages/[[...file_name]].js

@@ -1,0 +1,36 @@
+What is Bootstrap ?
+
+Bootstrap is one of the popular front-end frameworks which has a nice set of predefined CSS codes.
+The updated version of Bootstrap5 was officially released on 16 June 2020. Bootstrap is a CSS framework that makes mobile-friendly web development and provides responsiveness.
+
+The framework is available for free and can be utilized in two ways either by downloading the zip files 
+and incorporating Bootstrap libraries/modules into the project or by directly including the Bootstrap URL 
+and using the online version.
+
+
+==>Features of Bootstrap
+Bootstrap is the Fastest and Easiest way to create web pages.
+Bootstrap is widely used to create Platform-independent web pages.
+Bootstrap is popular for creating Responsive web pages.
+
+
+==>Reasons to learn Bootstrap?
+Using pre-styled components makes development faster.
+Bootstrap is based on the mobile-first concept that works well on all screen sizes.
+Bootstrap makes it easy to Use the grid system for a well-organized and responsive page layout without complex coding.
+Bootstrap offers pre-built components and styles, making projects faster to complete.
+
+
+Bootstrap Components
+The table below illustrates the Bootstrap Components.
+
+Component	Description
+Bootstrap Containers	        Containers are used to create a responsive fixed-width layout.
+Bootstrap Colors	            Bootstrap provides a variety of color classes.
+Bootstrap Text Colors	        Text Colors Classes are used for changing text color.
+Bootstrap Responsive Columns	Grid system for creating responsive layouts.
+Bootstrap Columns	            Bootstrap offers different available column classes that can be utilized to manage the widths of non-grid elements.
+Bootstrap Tables	            Styled and responsive HTML tables.
+Bootstrap Alerts	            Displaying contextual feedback messages.
+Bootstrap Buttons	            Pre-styled buttons with various options.
+Bootstrap Cards	                Flexible and extensible content containers.

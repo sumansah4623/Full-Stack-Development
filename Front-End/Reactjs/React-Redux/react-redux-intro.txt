@@ -4,10 +4,11 @@ it is used to manage the data of the application. It is used with a library like
 
 
 
-
+installation :-
 npm install redux react-redux
-Import createStore from Redux and define a reducer:
 
+
+Import createStore from Redux and define a reducer:
 
 import { createStore } from "redux";
 

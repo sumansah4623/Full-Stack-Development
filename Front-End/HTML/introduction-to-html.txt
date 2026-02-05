@@ -1,0 +1,12 @@
+HTML (HyperText Markup Language) is the core language used to structure and display content on the web, 
+defining elements like text, images, links, and page layout so browsers can render websites properly.
+
+->Uses tags to define web page elements.
+->Forms the basic structure of every website.
+->Works with CSS for styling and JavaScript for interactivity.
+->Easy to learn and essential for web development.
+
+->Provides the basic framework and structure for all web pages using opening and closing tags like <p>, <h1>, and <div>.
+Supports text, images, links, lists, tables, forms, and multimedia elements such as audio and video.
+Uses attributes like src, href, and alt to add extra information and control element behavior.
+HTML documents are transferred over the internet using HTTP, making content accessible in browsers and easy to learn for beginners.

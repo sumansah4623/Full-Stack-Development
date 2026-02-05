@@ -1,0 +1,48 @@
+CSS stands for Cascading Style Sheets. It is a stylesheet language used to style and enhance website presentation. CSS is one of the three main components of a webpage, along with HTML and JavaScript.
+
+HTML adds Structure to a web page.
+CSS adds the style and makes it visually appealing.
+JavaScript adds interactivity and logic to the page.
+CSS was released (in 1996), 3 years after HTML (in 1993). The main idea behind its use is that it allows the separation of content (HTML) from presentation (CSS). This makes websites easier to maintain and more flexible.
+
+
+
+CSS Frameworks
+
+CSS Frameworks are pre-written libraries that simplify and speed up the process of designing responsive, visually consistent web interfaces. They offer ready-to-use components and grid systems, helping developers avoid repetitive CSS from scratch.
+
+
+It provides a solid foundation for buiding modern UIs with less code and better cross-browser compatiblity. They promote clean design standards, enabling faster prototyping and consistent styling across projects.
+
+Why use CSS Frameworks?
+CSS frameworks offer several features that make the development process more efficient and effective:
+
+Efficiency: Pre-designed components and utility classes reduce the time spent writing CSS from scratch.
+Responsive Design: Frameworks are built to adapt to various screen sizes, ensuring your design looks great on all devices.
+Cross-Browser Compatibility: Ensures consistent appearance across different browsers.
+Customisation: Allows for tailored designs while maintaining a consistent structure.
+Community Support: Large, active communities provide resources and support.
+Popular CSS Frameworks
+The most popular CSS Frameworks are given below:
+
+1. Bootstrap
+Bootstrap is a popular CSS framework with strong community support, offering pre-designed layouts such as buttons and navbars, along with utility classes. It is known for its strong community, pre-designed layouts, and responsive features. The current version is 5.3.2, released on 14 September 2023.
+
+Bootstrap is the most popular CSS framework, developed by Twitter. It is used for responsive grid system and extensive components. Bootstrap allows for fast and responsive web development. It includes a 12-column grid, pre-built components like modals, dropdowns, navigation, and more, along with JavaScript-based elements.
+
+Key Features
+Responsive grid system
+Pre-designed UI components
+Cross-browser compatibility
+JavaScript plugins for interactive elements
+Note: Bootstrap is ideal for projects where speed, cross-browser compatibility, and responsiveness are crucial.
+2. Tailwind CSS
+Tailwind CSS is a utility-first framework that is highly customizable. Instead of offering pre-designed components, Tailwind provides a set of utility classes that can be used to build custom designs without writing much CSS.
+
+Key Features
+Utility-first approach for custom designs
+Fully customizable with a configuration file
+No predefined components, offering more control
+When to Use Tailwind CSS
+Use Tailwind when you need a flexible, customizable design without relying on pre-built components.
+
