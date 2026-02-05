@@ -1,0 +1,179 @@
+A framework is a pre-built structure that helps developers 
+build applications faster, more organized, and more consistently.
+
+
+
+Think of it like this:
+
+> 🏗️ Framework = Ready-made building
+> 🧱 Your code = Rooms & decoration
+
+You don’t start from scratch—you build on top of the framework.
+
+
+
+==> What a Framework Does
+
+A framework provides:
+
+* 📦 Pre-written code (utilities, helpers)
+* 📐 Rules & structure (how files are organized)
+* 🔁 Common solutions (routing, state, validation, etc.)
+
+You write only the business logic, not the basics.
+
+
+
+
+
+==> Simple Example (Without vs With Framework)
+
+❌ Without framework
+
+* You manually handle:
+
+  * Routing
+  * DOM updates
+  * API calls
+  * File structure
+
+Very time-consuming and messy.
+
+✅ With framework (like React / Next.js)
+
+* Routing → already available
+* UI updates → automatic
+* Folder structure → predefined
+* Performance → optimized
+
+You focus on features, not setup.
+
+
+
+
+
+
+## Inversion of Control
+
+In normal programs:
+You call the code
+
+In a framework:
+Framework calls your code
+
+Example:
+
+* You define a component
+* Framework decides when and how to run it
+
+This is why frameworks feel “strict”.
+
+
+
+
+==>> Types of Frameworks
+
+1️⃣ Frontend Frameworks
+
+Used for UI & user interaction:
+
+* React (library + ecosystem)
+* Angular
+* Vue
+* Next.js (React framework)
+
+👉 You are already using Next.js, which is a framework on top of React.
+
+
+2️⃣ Backend Frameworks
+
+Used for server & APIs:
+
+* Express.js (Node)
+* NestJS
+* Django (Python)
+* Spring Boot (Java)
+
+
+
+3️⃣ Full-Stack Frameworks
+
+Frontend + Backend together:
+
+* Next.js
+* Nuxt
+* Laravel
+* Ruby on Rails
+
+
+==>> Framework vs Library
+
+| Library              | Framework                   |
+| -------------------- | --------------------------- |
+| You control the flow | Framework controls the flow |
+| Small & flexible     | Large & opinionated         |
+| Example: React       | Example: Next.js            |
+
+👉 React = Library
+👉 Next.js = Framework
+
+
+
+
+
+==> Why Companies Use Frameworks
+
+* 🚀 Faster development
+* 🧹 Clean & maintainable code
+* 👥 Team collaboration
+* 🔐 Security & best practices
+* 📈 Scalability
+
+
+
+
+Real-Life Analogy
+
+* Library → Toolbox (you choose tools)
+* Framework → Factory (rules + machines already set)
+
+
+
+
+
+
+
+
+
+Library
+
+A library is a collection of reusable functions or 
+code that you call whenever you need to perform a specific task.
+
+🧰 Library = Toolbox
+🧑‍🔧 You decide when, where, and how to use it.
+
+A library is a set of pre-written code that helps developers perform common tasks, while the developer controls the program flow.
+
+How a Library Works
+You import the library
+You call its functions
+Your code is in control
+
+📌 The library never forces structure or rules.
+
+Simple Example
+
+Without Library
+function add(a, b) {
+  return a + b;
+}
+
+
+With Library (lodash)
+import _ from "lodash";
+
+_.add(2, 3);
+
+
+➡️ You decide when to use _.add().

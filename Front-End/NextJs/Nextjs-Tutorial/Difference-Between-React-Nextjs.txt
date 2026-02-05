@@ -1,0 +1,45 @@
+Big Difference (React vs Next.js)
+
+React (what you already did)
+Entry file: main.jsx
+Root component: App.jsx
+Routing: react-router-dom
+Components: src/components/*
+
+
+Next.js (App Router)
+❌ No main.jsx
+❌ No App.jsx
+❌ No react-router-dom
+✅ Routing is file-based
+✅ Root page is app/page.js
+
+
+
+
+Your React App Structure (Current)
+From your screenshot, your React app looks like this:
+src/
+ ├─ components/
+ │   ├─ AddBook.jsx
+ │   ├─ BookList.jsx
+ │   ├─ BookDetails.jsx
+ │   └─ AddBook.css
+ ├─ App.jsx
+ ├─ main.jsx
+
+
+
+ Next.js Folder Structure (Correct Way)
+
+In Next.js, do this:
+
+src/
+ └─ app/
+     ├─ page.js            ← replaces App.jsx
+     ├─ layout.js
+     ├─ components/
+     │   ├─ AddBook.jsx
+     │   ├─ BookList.jsx
+     │   ├─ BookDetails.jsx
+     │   └─ AddBook.css

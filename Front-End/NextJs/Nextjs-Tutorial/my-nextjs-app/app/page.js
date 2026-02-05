@@ -8,8 +8,17 @@
 
 
 
-import Link from "next/link";
 
+// export default function Home() {
+//   return (
+//     <div><h1>Welcome to the Next.js Tutorial</h1></div>
+//   );
+// }
+
+
+
+
+import Link from "next/link";
 
 export default function Home() {
   return (

@@ -1,0 +1,31 @@
+React Redux is a state management library for React applications. 
+Redux simply helps to manage the state of your application or in other words, 
+it is used to manage the data of the application. It is used with a library like React.
+
+
+
+
+npm install redux react-redux
+Import createStore from Redux and define a reducer:
+
+
+import { createStore } from "redux";
+
+const initialState = {
+  count: 0,
+};
+
+const counterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { ...state, count: state.count + 1 };
+    case "DECREMENT":
+      return { ...state, count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const store = createStore(counterReducer);
+
+export default store;
