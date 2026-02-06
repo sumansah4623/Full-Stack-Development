@@ -1,0 +1,14 @@
+Client :- Request to data
+Server :- Server as Machine
+third party Services :- Cloud(AWS, Google cloud, Azure)
+API :- Connect client to database
+Nodejs :- Runtime for javaScript
+Package.json :- entry point, contain all dependices that are required
+
+
+installation of Express
+npm init
+npm i express
+npm start
+nodemon start
+thunder client extension is use here

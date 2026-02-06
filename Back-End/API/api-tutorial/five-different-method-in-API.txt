@@ -1,0 +1,391 @@
+5 HTTP Methods in RESTful API Development
+
+JavaScript is by far one of the most popular languages when it comes to web development, 
+powering most websites and web applications. Not being limited to only 
+the client-side JavaScript is also one of the most popular languages which are used for developing server-side applications. 
+Organizations use Javascript to create interactive and dynamic web applications for their customers. 
+Today, most modern web applications rely on using REST architecture to improve the website's dynamic capabilities.
+
+
+
+HTTP Methods in RESTful API Development
+Thus, there are some of the most crucial HTTP methods that you must know as a developer,
+to develop RESTful APIs for your application. RESTful APIs are those that follow the REST (Representational State Transfer) architectural style.
+With this being said, let’s continue with the article on the essential RESTful methods to assist you to have with working on the server side using JavaScript.
+
+1.GET  2.POST  3.PUT  4.Patch  5.delete
+
+
+
+5 Essential HTTP Methods in RESTful API Development
+1. GET
+The GET method is used to 'retrieve' a record or a collection of records from the server. The below code shows the implementation of the GET method in JavaScript.
+
+
+Example:
+
+1.1. Backend (Node with Express)
+
+// returns the list of students
+app.get('/students', function (req, res) {
+
+    res.json(students);
+    
+});
+
+Here, the code defines a get() method that is used to retrieve the 'students' (here is an array of objects) data from the server.  
+It defines a route that listens to the '/students' endpoint. The second parameter is a callback function that receives 'req'(request) and 'res' (response) objects as arguments. 
+It uses the 'res.json()' method to send the data to the client. 
+
+1.2. Frontend (JavaScript)
+
+const getStudents = async(URL) => {
+      const response = await fetch(URL);
+        
+      const data = await response.json();
+        
+      console.log(data)
+}
+getStudents(BASEURL+"/students");
+
+Here, the code defines an async function called 'getStudents()' that makes a GET request to the API Endpoint (/students) using the fetch function. 
+The fetch function returns a promise that is resolved with await and the response object is stored in the ‘response’ variable. The json() method is called on the 
+response to parse the data which again returns a promise that is resolved by await and the data is stored in the ‘data’ variable. The parsed data(list of students) is then logged into the console. 
+
+Must Read: Express | app.get() 
+
+2. POST
+The POST method sends data to create a 'new record' on the server. The below code shows the implementation of the POST method in JavaScript.
+
+Example:
+
+2.1. Backend (Node with Express)
+
+// add student
+app.post("/students", function (req, res) {
+  var student = req.body;
+  
+  students.push(student);
+  
+  res.json({ message: "Record Added" });
+});
+
+Here, the code defines a post() method that is used to add a new record i.e. 'student' data to the server.  It defines a route that listens to the '/students' endpoint. The second parameter is a callback function that receives 'req'(request) and 'res' (response) objects as arguments. It extracts the data from the request using 'req.body', and appends it to the existing list using the array push() method. Finally, it sends the acknowledgment message back to the client in the form of JSON data using res.json().
+
+2.2. Frontend (JavaScript)
+
+const addStudent = async (URL, student) => {
+  const response = await fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: student,
+  });
+
+  const data = await response.json();
+
+  console.log(data.message);
+};
+
+addStudent(BASEURL + "/students", { id: 3, name: "Geek3" });
+
+Here, the code defines an async function called 'addStudent()' that makes a POST request to the API Endpoint (/students) with the request body containing the 'student' data. The fetch function returns a promise which is resolved with await and the response object is stored in the ‘response’ variable. The json() method is called on the response to parse the data which again returns a promise that is resolved by await and the data is stored in the ‘data’ variable. The parsed data (acknowledgment message - Record Added) is then logged into the console. 
+
+Must Read: Express | app.post()
+
+3. PUT
+The PUT method sends data to update an 'existing record' on the server. The below code shows the implementation of the PUT method in JavaScript.
+
+Example:
+
+3.1. Backend (Node with Express)
+
+app.put("/students/:id", function (req, res) {
+  var id = req.params.id;
+  
+  var student = req.body;
+  
+  // updating user with the specific id
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+      students[i] = student;
+      break;
+    }
+  }
+  
+  res.json({ message: "Record Updated" });
+});
+
+Here, the code defines a put() method that is used to update an existing record i.e. 'student with specific id' on the server.  It defines a route that listens to the '/students/:id' endpoint. The ':id' here is a URL parameter that is extracted using 'req.params.id'. The data passed inside the request body is extracted using 'req.body'. The student's data is traversed to find the student with the matching id which on found gets the particular record replaced with new data. Finally, it sends the acknowledgment message back to the client in the form of JSON data using res.json().
+
+3.2. Frontend (JavaScript)
+
+const updateStudent = async (URL, student) => {
+  const response = await fetch(URL, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: student,
+  });
+
+  const data = await response.json();
+
+  console.log(data.message);
+};
+updateStudent(BASEURL + "/students/3", { id: 3, name: "Geek3 Updated" });
+
+Here, the code defines an async function called 'updateStudent()' that makes a PUT request to the API Endpoint (/students/3) with the request body containing the 'student' data. The fetch function returns a promise which is resolved with await and the response object is stored in the ‘response’ variable. The json() method is called on the response to parse the data which again returns a promise that is resolved by await and the data is stored in the ‘data’ variable. The parsed data (acknowledgment message - "Record Updated") is then logged into the console. 
+
+Must Read: Express | app.put()
+
+4. PATCH
+Like the PUT method, PATCH is also used to send data to update an 'existing record' on the server. But the important difference between PUT and PATCH is that PATCH only applies partial modifications to the record instead of replacing the whole record. The below code shows the implementation of the PATCH method in JavaScript.
+
+Example:
+
+4.1. Backend (Node with Express)
+
+app.patch("/students/:id", function (req, res) {
+  var id = req.params.id;
+  var student = req.body;
+  
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+    
+    // replacing only specific properties 
+      for (var key in student) {
+        students[i][key] = student[key];
+      }
+      break;
+      
+    }
+  }
+  res.json({ message: "Record Updated using patch" });
+});
+
+Here, the code defines a patch() method that is used to partially update an existing record i.e. 'student with specific id' on the server.  It defines a route that listens to the '/students/:id' endpoint.  The ':id' here is a URL parameter that is extracted using 'req.params.id'. The data passed inside the request body is extracted using 'req.body'. The student's data is traversed to find the student with the matching id which on found gets the particular record updated, here instead of updating the entire object only the specific properties on the objects get updated. Finally, it sends the acknowledgment message back to the client in the form of JSON data using res.json().
+
+4.2. Frontend (JavaScript)
+
+// update using patch
+const updateStudentPatch = async (URL, student) => {
+    const response = await fetch(URL, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: student,
+    });
+    
+    const data = await response.json();
+
+    console.log(data);
+};
+
+updateStudentPatch(BASEURL + "/students/2", { name: "Geek2 Updated using Patch" });
+
+Here, the code defines an async function called 'updateStudentPatch()' that makes a PATCH request to the API Endpoint (/students/2) with the request body containing the specific('name') property 'student' data. The fetch function returns a promise which is resolved with await and the response object is stored in the ‘response’ variable. The json() method is called on the response to parse the data which again returns a promise that is resolved by await and the data is stored in the ‘data’ variable. The parsed data (acknowledgment message - 'Record Updated using patch') is then logged into the console. 
+
+Must Read: Express | put() vs patch()
+
+5. DELETE
+The DELETE method is used to delete record(s) from the server. The below code shows the implementation of the DELETE method in JavaScript.
+
+Example:
+
+5.1. Backend (Node with Express)
+
+app.delete("/students/:id", function (req, res) {
+  var id = req.params.id;
+  
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+      students.splice(i, 1);
+      break;
+    }
+  }
+  
+  res.json({ message: "Record Deleted" });
+});
+
+Here, the code defines a delete() method that is used to delete an existing record (here 'student with specific id') on the server.  It defines a route that listens to the '/students/:id' endpoint.  The ':id' here is a URL parameter that is extracted using 'req.params.id'. The student's data (here Array of students) is traversed to find the student with the matching id which on found gets deleted using the Array splice() method in javascript. Finally, it sends the acknowledgment message back to the client in the form of JSON data using res.json().
+
+5.2. Frontend (JavaScript)
+
+const deleteStudent = async (URL) => {
+   const response = await fetch(URL, {
+       method: "DELETE",
+       headers: {
+           "Content-Type": "application/json",
+       },
+   });
+
+   const data = await response.json();
+
+   console.log(data);
+};
+deleteStudent(BASEURL + "/students/3");
+
+Here, the code defines an async function called 'deleteStudent()' that makes a PATCH request to the API Endpoint (/students/3). The fetch function returns a promise which is resolved with await and the response object is stored in the ‘response’ variable. The json() method is called on the response to parse the data which again returns a promise that is resolved by await and the data is stored in the ‘data’ variable. The parsed data (acknowledgment message - 'Record Deleted') is then logged into the console.
+
+Must Read: Express | app.delete()
+
+Code Files
+1. Backend Code
+
+// index.js
+var express = require("express");
+
+// database
+var students = [
+  { id: 1, name: "Geek1" },
+  { id: 2, name: "Geek2" },
+];
+
+var app = express();
+app.use(express.json());
+
+// returns the list of students
+app.get("/students", function (req, res) {
+  res.json(students);
+});
+
+// add student
+app.post("/students", function (req, res) {
+  var student = req.body;
+  students.push(student);
+  res.json({ message: "Record Added" });
+});
+
+// update student
+app.put("/students/:id", function (req, res) {
+  var id = req.params.id;
+  var student = req.body;
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+      students[i] = student;
+      break;
+    }
+  }
+  res.json({ message: "Record Updated" });
+});
+
+// update using patch
+app.patch("/students/:id", function (req, res) {
+  var id = req.params.id;
+  var student = req.body;
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+      for (var key in student) {
+        students[i][key] = student[key];
+      }
+      break;
+    }
+  }
+  res.json({ message: "Record Updated using patch" });
+});
+
+
+
+// delete student
+app.delete("/students/:id", function (req, res) {
+  var id = req.params.id;
+  for (var i = 0; i < students.length; i++) {
+    if (students[i].id == id) {
+      students.splice(i, 1);
+      break;
+    }
+  }
+  res.json({ message: "Record Deleted" });
+});
+
+app.listen(5000, () => {
+  console.log("Server started on port 5000");
+});
+2. Frontend Code
+
+var BASEURL = "http://localhost:5000";
+
+const getStudents = async (URL) => {
+  const response = await fetch(URL);
+
+  const data = await response.json();
+
+  console.log(data);
+};
+
+const addStudent = async (URL, student) => {
+  const response = await fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: student,
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+};
+
+const updateStudent = async (URL, student) => {
+  const response = await fetch(URL, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: student,
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+};
+
+// update using patch
+const updateStudentPatch = async (URL, student) => {
+  const response = await fetch(URL, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: student,
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+};
+
+// delete student
+const deleteStudent = async (URL) => {
+  const response = await fetch(URL, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+};
+
+// Function Calls
+getStudents(BASEURL + "/students");
+
+addStudent(BASEURL + "/students", { id: 3, name: "Geek3" });
+
+updateStudent(BASEURL + "/students/3", { id: 3, name: "Geek3 Updated" });
+
+updateStudentPatch(BASEURL + "/students/2", {
+  name: "Geek2 Updated using Patch",
+});
+
+deleteStudent(BASEURL + "/students/3");
+Conclusion
+Now that you know how to implement RESTful HTTP methods in javascript, start using them now! HTTP methods such as GET, POST, PUT, PATCH, and DELETE are used in RESTful API development to specify the type of action being performed on a resource. 
+RESTful HTTP methods are an essential component of developing web APIs in the REST architectural style. They are widely used in modern web development because they provide a standard interface for interacting with server resources.
+
