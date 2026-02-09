@@ -1,0 +1,232 @@
+Today’s assignment is to build CRUD APIs (Create, Read, Update, Delete).
+You need to:
+Create a data file (for example, JSON) where all records will be stored.Implement APIs to:Create new data and save it to the fileRead data from the fileUpdate existing data in the fileDelete data from the file
+
+All operations should read from and write back to the same file (no database should be used).
+
+
+
+Great assignment 👍
+Since you’re already learning **Node.js + Express**, I’ll explain this in **very simple, step-by-step** way using a **JSON file as storage (no database)**.
+
+---
+
+## What you will build
+
+A small **Express server** that:
+
+* Stores data in a `data.json` file
+* Supports **CRUD APIs**
+
+  * **Create** → POST
+  * **Read** → GET
+  * **Update** → PUT
+  * **Delete** → DELETE
+
+---
+
+## Step 1: Create Project Folder
+
+```bash
+mkdir crud-file-api
+cd crud-file-api
+npm init -y
+npm install express
+```
+
+---
+
+## Step 2: Create Required Files
+
+```
+crud-file-api/
+│
+├── server.js
+└── data.json
+```
+
+---
+
+## Step 3: Create `data.json`
+
+Start with an empty array:
+
+```json
+[]
+```
+
+This file will act like your **database**.
+
+---
+
+## Step 4: Basic Express Server (`server.js`)
+
+```js
+const express = require("express");
+const fs = require("fs");
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+```
+
+---
+
+## Step 5: Helper Functions (Read & Write File)
+
+Add this **inside `server.js`**:
+
+```js
+const readData = () => {
+  const data = fs.readFileSync("data.json", "utf-8");
+  return JSON.parse(data);
+};
+
+const writeData = (data) => {
+  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
+};
+```
+
+---
+
+## Step 6: CREATE API (POST)
+
+Add new record to file.
+
+```js
+app.post("/users", (req, res) => {
+  const users = readData();
+
+  const newUser = {
+    id: Date.now(),
+    name: req.body.name,
+    email: req.body.email
+  };
+
+  users.push(newUser);
+  writeData(users);
+
+  res.status(201).json(newUser);
+});
+```
+
+📌 Test in Thunder Client:
+
+* **POST** → `http://localhost:3000/users`
+* Body (JSON):
+
+```json
+{
+  "name": "Suman",
+  "email": "suman@gmail.com"
+}
+```
+
+---
+
+## Step 7: READ API (GET)
+
+Read all records from file.
+
+```js
+app.get("/users", (req, res) => {
+  const users = readData();
+  res.json(users);
+});
+```
+
+📌 Test:
+
+* **GET** → `http://localhost:3000/users`
+
+---
+
+## Step 8: UPDATE API (PUT)
+
+Update data using `id`.
+
+```js
+app.put("/users/:id", (req, res) => {
+  const users = readData();
+  const id = Number(req.params.id);
+
+  const index = users.findIndex(user => user.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  users[index] = {
+    ...users[index],
+    name: req.body.name,
+    email: req.body.email
+  };
+
+  writeData(users);
+  res.json(users[index]);
+});
+```
+
+📌 Test:
+
+* **PUT** → `http://localhost:3000/users/123456`
+* Body:
+
+```json
+{
+  "name": "Updated Name",
+  "email": "updated@gmail.com"
+}
+```
+
+---
+
+## Step 9: DELETE API (DELETE)
+
+Remove record from file.
+
+```js
+app.delete("/users/:id", (req, res) => {
+  const users = readData();
+  const id = Number(req.params.id);
+
+  const newUsers = users.filter(user => user.id !== id);
+
+  if (users.length === newUsers.length) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  writeData(newUsers);
+  res.json({ message: "User deleted successfully" });
+});
+```
+
+📌 Test:
+
+* **DELETE** → `http://localhost:3000/users/123456`
+
+
+
+## Step 10: Run Server
+
+```bash
+node server.js
+
+
+## How It Works (Very Important 💡)
+
+1. Every API:
+
+   * Reads data from `data.json`
+   * Modifies data
+   * Writes back to `data.json`
+2. **No database used**
+3. JSON file acts like storage
+
+
+## Simple Flow Diagram
+Client → API → Read data.json → Modify → Write data.json → Response
