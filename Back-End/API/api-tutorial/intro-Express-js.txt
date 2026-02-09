@@ -1,0 +1,43 @@
+What is Express.js?
+
+Express.js is a framework for Node.js that helps us build backend servers and APIs easily.
+
+In simple words:
+Express = easy way to create a server in Node.js
+
+
+
+Basic Express App
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
+
+app.listen(7000, () => {
+    console.log("Server running");
+});
+
+npm init
+npm i express
+npm start
+
+
+
+Where is Express used?
+
+REST APIs
+Backend for React / Next.js
+Authentication (login/signup)
+CRUD apps
+
+Real-world projects
+Simple Real-Life Example
+
+Think of Express as a restaurant waiter 🍽️
+Client → customer
+Request → order
+Express → waiter
+Server → kitchen
+Response → food served

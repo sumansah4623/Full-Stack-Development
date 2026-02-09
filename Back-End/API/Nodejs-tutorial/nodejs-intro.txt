@@ -1,0 +1,43 @@
+Node.js is a powerful, open-source, and cross-platform JavaScript runtime environment built on Chrome's V8 engine. 
+It allows you to run JavaScript code outside the browser, making it ideal for building scalable server-side and networking applications.
+
+JavaScript was mainly used for frontend development earlier. With Node.js (introduced in 2009), JavaScript became a backend language as well.
+Non-blocking, event-driven architecture for high performance.
+Supports the creation of REST APIs, real-time applications, and microservices.
+Comes with a rich library of modules through npm (Node Package Manager).
+
+
+To start with Node.js, you need to install and set it up on your machine. Follow these articles to install, depending on your system:
+
+How to Install Node.js on Windows?
+Installation of Node.js on Linux
+How to Install NodeJS on MacOS
+Let us now take a look at our first code example.
+
+
+// Import the http module
+const http = require("http");
+
+// Create a server
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+    res.end("Welcome to the Node.js Tutorial");
+});
+
+// Listen on port 3000
+server.listen(3000, () => {
+    console.log(
+        "Server is running on http://localhost:3000");
+});
+It will start a server, and when you visit http://localhost:3000, it will display
+
+Welcome to the Node.js Tutorial
+The http module is imported to create a basic HTTP server.
+The createServer() method is used to handle incoming requests and send responses.
+The server listens on port 3000, and a message is displayed in the browser when accessed.
+Why Learn Node.js
+It Enables the use of JavaScript for both frontend and backend development.
+It Supports building real-time applications like chat apps and gaming servers.
+It Provides high scalability for I/O-heavy applications.
+It Backed by a vibrant community and extensive library support

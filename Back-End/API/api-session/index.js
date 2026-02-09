@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json())
 
 
-
+//Define a route
 //GET : Read Data
 app.get("/", (req, res) => {
 
@@ -33,6 +33,7 @@ app.post("/user", (req,res) => {
         data : data
     });
 });
+
 
 
 //PUT :- Update WHole Data

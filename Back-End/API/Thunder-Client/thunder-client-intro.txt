@@ -1,0 +1,116 @@
+First: Start Your Server
+
+In VS Code terminal:
+node index.js
+
+
+You should see:
+Server is running on http://localhost:7000
+
+
+⚠️ Keep this terminal running while using Thunder Client.
+
+2️⃣ Open Thunder Client
+In VS Code:
+Click ⚡ Thunder Client icon (left sidebar)
+Click New Request
+
+3️⃣ Test GET request (Read Data)
+🔹 Endpoint
+GET http://localhost:7000/
+
+🔹 Steps
+Method → GET
+URL → http://localhost:7000/
+Click Send
+
+✅ Response
+Hello World
+
+
+4️⃣ Test POST request (Create Data)
+
+Your code:
+app.post("/user", ...)
+🔹 Endpoint
+POST http://localhost:7000/user
+🔹 Steps
+Method → POST
+URL → http://localhost:7000/user
+Go to Body tab
+Select JSON
+Enter JSON:
+{
+  "name": "Suman",
+  "age": 22,
+  "email": "suman@gmail.com"
+}
+
+Click Send
+
+✅ Response
+{
+  "message": "Data Created Successfuly",
+  "data": {
+    "name": "Suman",
+    "age": 22,
+    "email": "suman@gmail.com"
+  }
+}
+
+
+5️⃣ Test PUT request (Update Full Data)
+
+Your code:
+app.put("/user/:id", ...)
+🔹 Endpoint
+PUT http://localhost:7000/user/1
+🔹 Steps
+Method → PUT
+URL → http://localhost:7000/user/1
+Body → JSON
+{
+  "name": "Updated Name",
+  "age": 25
+}
+
+Click Send
+
+✅ Response
+{
+  "message": "User 1 Updated Compleletly",
+  "updatedData": {
+    "name": "Updated Name",
+    "age": 25
+  }
+}
+
+
+
+6️⃣ Test PATCH request (Partial Update)
+🔹 Endpoint
+PATCH http://localhost:7000/user/1
+🔹 Body (JSON)
+{
+  "age": 26
+}
+
+✅ Response
+{
+  "message": "User 1 updated Partialy",
+  "updatedField": {
+    "age": 26
+  }
+}
+
+7️⃣ Test DELETE request (Remove Data)
+🔹 Endpoint
+DELETE http://localhost:7000/user/1
+🔹 Steps
+Method → DELETE
+URL → http://localhost:7000/user/1
+Click Send
+✅ Response
+{
+  "message": "User 1 deleted Successfuly"
+}
