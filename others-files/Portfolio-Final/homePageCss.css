@@ -1,0 +1,180 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+
+/*two background layers */
+.hero-section {
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)),
+    url("devops.jpg");                                       /* YOUR IMAGE HERE */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-size: xx-large;
+  font-weight: 500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+
+
+
+/* sidebar */
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background: #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100vh;
+  padding-top: 20px;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.sidebar a {
+  flex-direction: row;
+  font-size: 50px;
+}
+
+.sidebar a i {
+  margin-right: 10px;
+}
+
+.sidebar img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+
+.sidebar a {
+  color: #aaa;
+  text-decoration: none;
+  padding: 15px 0;
+  display: block;
+}
+
+.sidebar a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.sidebar i {
+  font-size: 24px;
+}
+
+.sidebar span {
+  display: block;
+  font-size: 12px;
+}
+
+.main-content {
+  margin-left: 120px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+}
+
+.section-title {
+  border-bottom: 2px solid #777;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* Portfolio Section */
+.portfolio-grid {
+  justify-content: center;
+}
+
+.skill-img {
+  width: 100%;
+  max-width: 140px;       /* Controls image size */
+  height: 140px;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: antiquewhite;
+  transition: all 0.4s ease;
+}
+
+/* hover effect */
+.skill-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+  background: #b54c4c;
+}
+
+
+
+
+/* Contact Section */
+#contact {
+  background-color: rgb(8, 125, 84);
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-form input{
+  margin-bottom: 15px;
+
+}
+
+
+
+
+
+
+
+/* ------------------- footer ------------------------- */
+.site-footer {
+  background-color: rgb(48, 54, 106);
+  border-top: 1px solid #aaa;
+  border-radius: 100px;
+}
+
+.site-footer .social-link {
+  color: bisque;
+  font-size: 40px;
+  margin: 0 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.site-footer .social-link:hover {
+  color: aqua;
+  transform: translateY(-30px);
+}
+
+/* footer text */
+.site-footer .footer-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #fff;
+}

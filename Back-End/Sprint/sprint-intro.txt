@@ -1,0 +1,41 @@
+Explain the Concept of Sprint Planning in Scrum with Kanban's Approach?
+
+In project management, agile methodology has emerged as one of the most used techniques to develop software. Sprint planning with Kanban is a technique used by many companies. If we combine both Scrum and Kanban, it would provide great efficiency as well as transparency. This also reduces the complexity of the products and teams can have better control over the work they are doing.
+
+What is Sprint Planning in Scrum?
+Sprint planning is a method in which a project is divided into sprints which means divided into small phases known as a Sprint. Each phase is given a particular period for the completion.
+
+It helps the team to identify, what amount of work is done to complete a project.
+This planning is done by all members of the Scrum team which includes the Scrum master, the product owner, and the developers.
+The amount of work to be done is represented in the form of product backlog.
+The scrum team sets the goals and plans the work for each sprint.
+From the product backlog, the task goes to work in progress and then to completion.
+Integration of Kanban into Sprint Planning
+Choosing between Scrum or Kanban is a difficult task but integrating Scrum's Sprint planning with Kanban can vary how we organize the workflow. The main goal of Kanban is to provide visualization of the flow of the project. On integrating Kanban into scrum's sprint planning, transparency of the process is an additive feature that is delivered. The Kanban board is used to limit the work items in a single sprint. If the work is not finished in that sprint, it is carried forward to another sprint. It takes place in the following manner:
+
+1. Visualizing the Sprint Backlog
+In this, the sprint backlog is visualized using the Kanban board, which increases transparency and collaboration. The team tracks the progress timely. The team should define each component clearly, kanban board is used with other tools to manage sprint backlog efficiently.
+
+2. WIP Limits
+Here a new concept of work in progress is introduced, the number of work items is set in a particular sprint. This enables a smooth flow of tasks without the burden of over-assigning the work items. WIP limit is assigned to each column in the sprint board.
+
+3. Continuous Flow
+Kanban provides a continuous flow of work. Whereas, in scrum, it was limited to the time duration. So, with Kanban priorities of work can be altered as and when needed. Thus, it is adaptable. The continuous flow of work is regularly viewed and adjusted on the board. Carry out discussions on what work is done, what is left to do, and what improvements that need to be made.
+
+4. Cycle Time Analysis
+In Kanban, the time taken by the work item to start and finish is measured. If this feature is integrated with sprint planning then it will allow the team to take more accurate estimations and provide continuous improvement. This takes place until the work is marked as done. The calculation of cycle time is as follows:
+
+Cycle Time = Finish Time - Start Time
+Cycle time is measured in days, hours, minutes, seconds. Short cycle time means the delivery is quicker.
+
+5. Daily Standups
+Scrum provides effective communication and collaboration with the team, by adding kanban boards in meetings. It will provide a reference point for the discussions, which will help the team to stay focused on their goals. It allows the team to organize, discuss, manage risks, and plan for the future work that needs to be done.
+
+
+
+
+Tools and Techniques for Sprint Planning with Kanban
+Kanban is not a sprint-based approach so therefore some teams choose to merge Sprint planning with Kanban methodology. There are various tools and technologies, that are used to integrate kanban into sprint planning. Following are the tools and technologies used:
+
+1. Kanban Board
+To visualize the work items, Kanban boards are used as it is the main feature of the Kanban methodology. To show the different stages of the work items columns are used. These stages are backlog, work in progress, and done. The to-do list is created in the sprint backlog, then work is taken into work-in-progress mode and then after completion, it is marked as done. This provides transparency into the status of each task.

@@ -1,0 +1,33 @@
+--> Installion
+
+1.sudo apt-get install gnupg curl
+curl -fsSL https://pgp.mongodb.com/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+   --dearmor
+2.echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.com/apt/ubuntu noble/mongodb-enterprise/8.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise-8.2.list
+3.sudo apt-get update
+4.sudo apt-get install mongodb-enterprise
+
+
+
+--> Starting mongodb and check status
+sudo systemctl start mongod
+sudo systemctl status mongod
+
+
+
+--> Now install Mongodb Compass(GUI)
+cd ~/Downloads
+sudo apt install ./mongodb-mongosh_2.6.0_amd64.deb
+mongosh --version
+
+
+
+Open MongoDB Compass
+mongodb-compass
+connect Compass to MongoDB
+
+In Compass:
+Connection String:
+mongodb://localhost:27017
+Click Connect

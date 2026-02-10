@@ -1,0 +1,64 @@
+Kanban - Agile Methodology
+
+Kanban is a popular Agile Software Development Methodology. It is a signaling device that instructs the moving of parts in a ‘pull’ production system, developed as part of the TPS (Toyota Production System). Kanban is about envisioning the existing workflow in terms of steps. These steps can be created on the whiteboard. 
+
+The main aim of Kanban is to reduce WIP (Work-In-Progress), or inventory, between processes by ensuring the upstream process creates parts as long as its downstream process needs it. The goal of the Kanban execution is to ensure work items move to the next steps quickly to realize business value faster.
+
+What is kanban?
+The Kanban method is an approach to evolutionary and incremental systems and process change for organizations. A work-in-progress limited pull system is the central mechanism to uncover system operation (or process) complications and encourage collaboration to continuously improve the system.
+
+Electronic Kanban boards are also available in ALM tools like Rally (CA Agile), Jira, Swift, Kanban, LeanKit, Kanban, etc. Stages could be configured in these tools, and the movement of tickets between stages could be viewed in these tools.
+
+When Would The Kanban Approach Be Needed?
+Kanban is best suited in the below scenarios:
+
+Dynamic/ frequent changing requirements which need to be delivered faster.
+In case of changing priorities, the team can pull the prioritized work as soon as the WIP limit drops.
+Frequent releases are there (Periodically).
+When incoming work is continuous.
+Where task priority needs to be decided dynamically based on task nature and type.
+The best suit is for Ticket or Production support projects.
+Kanban could be used by any function of an organization as well, for instance in Marketing, Sales, and HR.
+However, Kanban might not be the right fit for projects where:
+
+Tasks could remain in the ‘wait’ state for long.
+Mainly research-oriented takes are there.
+For enhancements where requirements are evolving/ unclear.
+No prior scope is not defined and tasks keep on evolving.
+Too much dependency is there between tasks.
+If all the items across work stages need to be collated, then only deployed.
+Kanban Board/Card
+It is critical to understand the visualization of workflow stages in the task execution pipeline. Kanban board provides a simple way to understand the process. It can be explained as follows:
+
+Every request received is put on the Kanban board. 
+A column on the board represents a stage (these stages are termed as the Work stage) during the lifecycle of bugs/ tickets. For instance, the Kanban board can have 4 stages- Received/ Acknowledged, In-progress, UAT & Done. 
+The received stage could be called a “Backlog” also. 
+The team could decide the names for the phases based on the terminology used by their respective teams.
+Kanban board could be a simple whiteboard on which sticky notes could be used with ticket details or an electronic Kanban board could be used. 
+ALM tools like Rally/ Jira could be configured to use the Kanban board.
+The board can give a signal in case the bugs/ tickets are stuck in one stage for a long. 
+For electronic boards, one can configure the Kanban board in a way that tickets/ user stories along with the time stamp are visible. 
+For whiteboards that are maintained manually, the team can enter the date/ time.
+Sample Kanban Board
+Sample Kanban Board
+From the sample board above, these can be inferred about Kanban Boards or Cards:
+
+Workflow: Backlog -> Acknowledged -> Development -> Testing -> Deployment/UAT -> Done
+Work stages: Acknowledged, Development (In Progress), Development (Ready), Testing (In Progress), Testing (Ready), Deployment/UAT, Backlog (Arrival Queue), Done (Finished Stage)
+Work Items: Two types of tasks (Type 1 and Type 2) are represented by work items  
+Principles of Kanban
+Kanban is based on four key principles which are mentioned below:
+
+Start with the existing process: It is a change management method that starts with the existing process. Changes are done in the system in incremental and evolutionary ways. Unlike Scrum, there's no specific process or roles defined in Kanban.
+Agree to continue evolutionary and incremental changes: After starting with the existing process, the team must agree on continuous, incremental, and evolutionary changes. The changes should be small and incremental. Rapid and substantial changes may be effective but they will be subjected to larger resistance as well by the Team.
+Admire current roles, processes, responsibilities & titles: Though Kanban suggests continuous incremental changes in the process, it respects current roles, responsibilities, and job titles. This helps the team to gain confidence as they get started with Kanban.
+Leadership at all levels: Kanban does not expect leadership from a specific set, rather the actions of leadership at all levels in the organization, are very much encouraged.
+Kanban Practices
+The following are the six core Kanban practices:
+
+Limit WIP: Limiting Work-In-Process (WIP) implies that a pull system is executed on either parts or the whole workflow. It (PULL system) will act as one of the key stimuli for incremental, continuous, and evolutionary changes to the system. Limit WIP assigns explicit limits to the number of items that may be in progress at each workflow state.
+Visualize: Visualizing the workflow and making it visible is important so as to know how work proceeds. Without understanding the flow of work, incorporating the right changes is difficult. Usually, a card wall with columns and cards is used to visualize the flow of work. Different states or steps within the workflow are represented by the columns on the card wall.
+Manage flow: Flow of work through every state within the workflow should be observed, measured, and informed. By managing the flow vigorously, the incremental, continuous, and evolutionary modifications to the system can be assessed to have negative or positive effects on the system.
+Improve Collaboratively, Evolve Experimentally: Kanban encourages small incremental, continuous, and evolutionary changes. Whenever teams have a common understanding of concepts about work, process, workflow, and risk, they are more likely to be able to form a shared understanding of a problem and suggest enhancement actions that could achieve a consensus.
+Implement Feedback Loops: Early feedback from clients and the pull system are important in Kanban. If we get feedback from different stakeholders and processes, it will help to eliminate risk and optimize the delivery process.
+Make Policies Explicit: Until the mechanism of a process is not made clear, it is difficult to hold a debate and discuss ways to improve it. Without a clear understanding of how work is truly done and how things actually work, any conversation of complications tends to be anecdotal, emotional, and subjective. With a clear understanding, it is possible to hold a more rational, empirical, objective discussion of issues. It is more likely to facilitate consensus around improvement suggestions.

@@ -1,0 +1,100 @@
+MangoDB
+
+MongoDB is an open-source, document-oriented NoSQL database designed to store 
+and manage large volumes of data efficiently using a flexible, JSON-like document model.
+
+Stores data in BSON format for efficient handling of JSON-like documents.
+Supports dynamic schemas, making it suitable for unstructured or semi-structured data.
+Scalable and easy to learn, widely used in modern web and mobile applications.
+Open-source and freely available on Linux, Windows, and macOS.
+RDBMS-vs-MongoDB.
+
+
+--> Reasons to Learn MongoDB
+
+Developers use MongoDB because it offers a lot of features for those 
+who like to work with big data. Here are few key reasons of why you should learn MongoDB.
+
+1.Popular choice for modern web and real-time applications.
+2.Provides scalability through sharding and high availability via replication.
+3.Supports multiple programming languages such as JavaScript, Python, and Java.
+4.Used by major companies like eBay, Uber, and Adobe for handling large, unstructured data.
+5.Enables faster development with a flexible, schema-less data model.
+
+
+
+--> MongoDB Hello World Example
+The first step to start with MongoDB is to Insert a simple document into a database using MongoDB's Node.js driver. 
+This example shows you have MongoDB installed and running locally.
+
+
+// MongoDB Hello World Program
+const { MongoClient } = require('mongodb');
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
+
+async function run() {
+    try {
+        // Connect to the MongoDB server
+        await client.connect();
+
+        // Choose the database
+        const db = client.db('testdb');
+
+        // Choose the collection
+        const collection = db.collection('users');
+
+        // Insert a document
+        const result = await collection.insertOne({ name: "John Doe", age: 30 });
+        console.log(`Document inserted with _id: ${result.insertedId}`);
+    } finally {
+        // Close the connection
+        await client.close();
+    }
+}
+
+run().catch(console.error);
+
+
+
+
+A simple MongoDB document Structure: 
+
+{
+  "_id": 1,
+  "title": "Geeksforgeeks",
+  "author": "John Smith",
+  "url": "https://www.geeksforgeeks.org/",
+  "tags": ["NoSQL", "Database", "Tutorial"],
+  "published": true,
+  "views": 1500
+}
+_id: Unique identifier for the document.
+title, author, url: Basic fields storing strings.
+tags: An array of strings.
+published: A Boolean value.
+views: A number representing views or count.
+
+
+
+
+Basic SQL Operations
+MongoDB provides several basic operations to manage and manipulate data efficiently:
+
+Create (Insert): Add new documents to a collection.
+Read (Find): Retrieve documents from a collection based on query criteria.
+Update: Modify existing documents in a collection.
+Delete: Remove documents from a collection.
+
+
+
+Features of the MongoDB database
+MongoDB offers several key features that make it efficient and scalable:
+
+Document Oriented: Stores all related data together in a single, flexible document rather than multiple tables.
+Indexing: Enables fast queries by avoiding full collection scans, crucial for handling large data efficiently.
+Scalability: Uses sharding to distribute data across multiple servers; easily add new machines to expand.
+Replication and High Availability: Stores multiple data copies on different servers for redundancy and fault tolerance.
+Aggregation: Processes and summarizes data (like SQL GROUP BY) using operations such as sum, avg, min, and max.
