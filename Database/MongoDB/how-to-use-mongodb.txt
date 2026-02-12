@@ -1,0 +1,36 @@
+Now let’s learn MongoDB step-by-step using the terminal
+
+start MongoDB
+sudo systemctl start mongod
+
+check status mongodb is running
+sudo systemctl status mongod
+
+
+Open MongoDB Shell
+MongoDB works using a shell called mongosh.
+
+Run:
+mongosh
+
+
+If successful, you’ll see something like:
+Current Mongosh Log ID: ...
+Connecting to: mongodb://127.0.0.1:27017/
+>
+
+That > means you are inside MongoDB 🎉
+
+To exit anytime:
+exit
+
+
+
+Show existing databases
+Inside mongosh, type:
+show databases
+
+You may see:
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB

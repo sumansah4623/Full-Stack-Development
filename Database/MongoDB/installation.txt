@@ -31,3 +31,9 @@ In Compass:
 Connection String:
 mongodb://localhost:27017
 Click Connect
+
+
+
+
+package for Connecting
+npm i mongoose
