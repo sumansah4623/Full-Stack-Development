@@ -1,0 +1,199 @@
+# 🏗 Backend Development Standard
+
+
+## 📁 1. Project Folder Structure
+
+
+src/
+  controllers/
+    user.js
+    product.js
+    auth.js
+  services/
+    user.js
+    product.js
+    openai.js
+  routes/
+    user.js
+    product.js
+    auth.js
+  models/
+    user.js
+    product.js
+  middlewares/
+    auth.js
+    error.js
+    validation.js
+  validations/
+    user.js
+    product.js
+  utils/
+    logger.js
+    response.js
+    helper.js
+  config/
+    database.js
+    env.js
+    aws.js
+  app.js
+  server.js
+
+
+
+
+## 🧱 2. Architecture Pattern
+
+We follow **Layered Architecture**:
+
+**Controller → Service → Model**
+
+### Controller
+
+- Handles request & response
+- Contains business logic
+- Validates input
+- Calls service layer
+- Formats response
+
+### Service
+
+- Handles only database queries
+- No response handling
+- No business logic
+- Returns raw data
+
+### Model
+
+- Database schema definition only
+
+### Route
+
+- Maps endpoint to controller function
+
+---
+
+## **📌 3. File Naming Convention**
+
+Since folders define responsibility:
+
+```
+controllers/user.js
+services/user.js
+routes/user.js
+models/user.js
+```
+
+### Rules:
+
+- Lowercase filenames
+- Singular naming
+- No `.controller.js` or `.service.js`
+- Folder determines role
+
+---
+
+## 🧠 4. Function Naming Standard
+
+### Controller (Business Logic Layer)
+
+Use simple action-based names:
+
+```
+get
+create (or save)
+update
+delete
+activate
+fetch
+```
+
+If clarity required:
+
+```
+deleteUser
+activateUser
+```
+
+---
+
+### Service (Database Layer)
+
+Keep naming simple and query-focused:
+
+```
+get
+save
+update
+fetch
+findOne
+findAll
+
+
+
+
+## 🌐 6. API Naming Convention
+
+Follow REST standards:
+
+
+GET    /users
+GET    /users/:id
+POST   /users
+PUT    /users/:id
+DELETE /users/:id
+
+
+### Rules:
+
+- Use plural nouns
+- Use lowercase
+- No verbs in routes
+
+---
+
+## 🌿 7. Git Branch Naming Convention
+
+Format:
+
+
+<issue-number>-<short-description>
+
+
+Examples:
+
+
+3-login-error
+11-service-cleanup
+25-openai-integration
+42-user-role-fix
+
+
+### Rules:
+
+- Lowercase only
+- Hyphen separated
+- No spaces
+- Keep concise
+
+
+
+## 🔐 8. Environment Variable Naming
+
+
+NODE_ENV
+PORT
+DB_URI
+OPENAI_API_KEY
+AWS_REGION
+JWT_SECRET
+
+
+
+## 🏆 9. Development Discipline Rules
+
+✔ Controllers must remain thin and structured
+✔ Services must only interact with DB
+✔ No DB queries in controllers
+✔ No response handling inside services
+✔ Keep functions small and single responsibility
+✔ Maintain consistent naming

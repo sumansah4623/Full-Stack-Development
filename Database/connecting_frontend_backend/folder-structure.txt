@@ -1,0 +1,54 @@
+-->Separate Frontend & Backend (Most Common in Real Projects)
+
+project-root/
+│
+├── frontend/                # Frontend (React / Angular / Vue)
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── api/              # API call functions (connect backend)
+│   │   │   └── user.api.js
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/         # Axios / Fetch config
+│   │   │   └── http.js
+│   │   ├── App.js
+│   │   └── main.js
+│   ├── .env                  # BACKEND_URL
+│   └── package.json
+│
+├── backend/                 # Backend (Node.js + Express / Hapi)
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   ├── controllers/
+│   │   │   └── user.controller.js
+│   │   ├── models/
+│   │   │   └── user.model.js
+│   │   ├── routes/
+│   │   │   └── user.routes.js
+│   │   ├── services/
+│   │   ├── app.js
+│   │   └── server.js
+│   ├── .env
+│   └── package.json
+│
+└── README.md
+
+
+
+
+How Frontend Connects to Backend
+
+frontend/.env
+
+VITE_API_URL=http://localhost:3000/api
+
+
+frontend/src/services/http.js
+
+import axios from "axios";
+
+export default axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+});

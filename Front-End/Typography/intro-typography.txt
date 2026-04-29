@@ -1,0 +1,45 @@
+What is typography? 
+It's an art and technique that breathes life into written words. 
+Typography encompasses everything from the design of a logo's typeface to the style of text on a T-shirt. 
+It involves choosing typefaces and fonts, designing text layouts, and modifying font styles to enhance readability and visual appeal. 
+This guide looks into various aspects of typography, including logo typeface design, cursive and handwriting styles, and the use of typography in different media like posters, artworks, and T-shirts.
+
+
+What is Typography and why is it important?
+Typography simply is a technique in user interface design to create readable, appealing, attractive, and easy-to-eye text for users to read. 
+Typography plays an integral role in any website's design.
+
+
+
+What is the Difference Between a Font and a Typeface?
+Aspect	Typeface	Font
+Definition	Design of a set of characters	Specific size, weight, and style of a typeface
+Example	Arial, Times New Roman	Arial 12-point bold
+Use	Describes the look of the text	Used to implement the typeface in specific sizes and styles
+
+
+
+
+What are the Different Types of Typefaces in Typography?
+Typefaces simply are the way of designing typography. Typefaces are distinct styles of writing for any font. It includes design for everything every set of characters - from letters, numbers, and punctuation marks, to symbols.
+
+Typefaces define the visual appearance of character and hence the visual appearance of the entire typography. It is one of the most important parts of typography that sets the tone of the text.
+
+1. Serifs
+Serifs are the oldest font styles whose characteristics are the small feet at the end of a stroke on the letter. Serifs help the reader follow the letter easily making them highly clear and readable. Serif fonts convey a very traditional vibe you can find these fonts being used in long-form copies for example, on books, magazines and newspapers.
+
+Going back in history, characters used to be created by chiseling on stone, and the chisel created small feet at the end of each stroke. This is how Serifs were born.
+
+Example: Times New Roman
+
+
+
+2. Sans-Serifs
+"Sans" in the word Sans-Serif in French basically means "without", therefore, sans-serif typefaces are those that lack serifs. San-serifs fonts are simpler to look and are mostly used as body copy, display and headlines. Sans-Serifs fonts are considered as clean, minimal and modern looking. They were first used in the 15th century.
+
+
+Script Typefaces:
+Script Typefaces are designed to emulate the flow and flourish of handwriting. They range from elegant, formal styles to more relaxed and whimsical variations. These typefaces often feature connected letters and varying strokes that mimic the movements of a pen or brush on paper. They can be further categorized into two main types:
+
+Formal Script Typefaces: These are based on the letterforms and calligraphic styles developed by writing masters from the 17th and 18th centuries. They are characterized by their sophisticated and ornate design, making them ideal for formal occasions like wedding invitations, certificates, and elegant branding.
+Casual Script Typefaces: These are less structured and more free-form compared to formal scripts, often embodying a more contemporary or laid-back vibe. Casual scripts are versatile and used in a variety of contexts from advertising to logo design, where a personal, human touch is desired.

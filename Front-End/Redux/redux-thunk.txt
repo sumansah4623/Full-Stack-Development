@@ -1,0 +1,61 @@
+Redux Thunk
+
+Redux Thunk helps Redux handle async tasks like API calls. It lets action creators return functions instead of objects, so Redux can manage both quick and slow actions smoothly. 
+It is especially useful for real-world apps where data needs to be fetched before updating the state.
+
+Helper for Redux: Acts like an assistant for managing app data.
+Handles slow tasks: Can manage actions that take time, like checking stock.
+Smooth performance: Ensures the app runs smoothly without freezing.
+Manages all actions: Handles both quick and time-consuming tasks efficiently.
+
+
+The prerequisites for using Redux Thunk are a basic understanding of JavaScript, React, and Redux.
+
+Example: Making a React-Redux weather app to show the temperature from an API.
+
+Without Redux Thunk:
+
+
+// Fist is to Action Creator
+const fetchTemperatureRedux = () => {
+  // This won't work without Redux Thunk for asynchronous operations
+  return {
+    type: 'FETCH_TEMPERATURE',
+    payload: fetch('https://api.weather.com/current-temperature')
+  };
+};
+
+With Redux Thunk:
+
+
+// Action Creator using Redux Thunk
+const fetchTemperatureRedux = () => {
+  return async (dispatch) => {
+    // Now you can perform asynchronous operations with Redux Thunk
+    try {
+    // Let's take one example URL
+      const response = await fetch('https://api.weather.com/current-temperature');
+      const data = await response.json();
+
+      dispatch({
+        type: 'FETCH_TEMPERATURE',
+        payload: data.temperature
+      });
+    } catch (error) {
+      dispatch({
+        type: 'FETCH_ERROR',
+        payload: 'Failed to fetch temperature data'
+      });
+    }
+  };
+};
+First Example: Without Redux Thunk, the action creator returns an object and cannot handle async tasks like API calls.
+Second Example: With Redux Thunk, it returns a function that gets dispatch, allowing async operations before updating the state.
+Advantages of React Thunk
+Asynchronous Operations: Handles API calls and async tasks smoothly.
+Flexible Actions: Actions can be written as functions for better control.
+Better State Management: Updates state after data is ready, useful for bigger apps.
+Disadvantages of React Thunk
+Increased Complexity: Adds more code, harder for simple apps.
+Learning Difficulty: Can be tricky for beginners.
+Extra Overhead: Not needed for small projects.

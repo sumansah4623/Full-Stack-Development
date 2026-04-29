@@ -1,0 +1,76 @@
+Global CSS is a built-in part of Next.js, but how you use it depends on the Next.js version.
+Since you’re working on layout (header, footer, product listing), this is important.
+
+
+
+Global CSS in Next.js (Correct Usage)
+🔹 Next.js 13+ (App Router) ✅ Recommended
+Where global CSS lives
+app/
+ ├── layout.tsx
+ ├── globals.css   ✅
+ └── page.tsx
+
+How to import it
+
+👉 Only in app/layout.tsx
+
+import "./globals.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
+
+📌 Rule:
+Global CSS must not be imported inside components.
+
+🔹 Next.js 12 / Pages Router
+styles/
+ └── globals.css
+pages/
+ └── _app.js
+
+import "../styles/globals.css";
+
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+🧠 What Global CSS Should Be Used For
+
+Use global CSS only for app-wide rules 👇
+
+✅ Good Use Cases
+/* globals.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #f8f9fc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+❌ What NOT to Put in Global CSS
+
+❌ Header layout
+❌ Footer styles
+❌ Product card CSS
+
+Those should go in CSS Modules or Tailwind.

@@ -1,0 +1,212 @@
+cart.module.js
+
+
+
+import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+
+// ================= API =================
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/cart`;
+
+// ================= Helpers =================
+const getSessionId = () => {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("sessionId");
+};
+
+const getToken = (auth) => auth?.token || localStorage.getItem("token");
+
+const authHeaders = (token, sessionId) => ({
+  headers: {
+    ...(token && { Authorization: `Bearer ${token}` }),
+    ...(sessionId && { "x-session-id": sessionId }),
+  },
+});
+
+// ================= Initial State =================
+const initialState = {
+  items: [],
+  count: 0,
+  loading: false,
+  error: null,
+};
+
+// ================= Slice =================
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    setCartItems: (state, action) => {
+      state.items = action.payload;
+    },
+
+    setCartCount: (state, action) => {
+      state.count = action.payload;
+    },
+
+    setCartLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+
+    setCartError: (state, action) => {
+      state.error = action.payload;
+    },
+
+    clearCart: (state) => {
+      state.items = [];
+      state.count = 0;
+    },
+  },
+});
+
+export const {
+  setCartItems,
+  setCartCount,
+  setCartLoading,
+  setCartError,
+  clearCart,
+} = cartSlice.actions;
+
+// ================= Get Cart =================
+export const getCart = () => async (dispatch, getState) => {
+  dispatch(setCartLoading(true));
+  dispatch(setCartError(null));
+
+  try {
+    const sessionId = getSessionId();
+    const token = getToken(getState().auth);
+
+    const res = await axios.get(API_URL, authHeaders(token, sessionId));
+
+    const items = res?.data?.data?.items || [];
+
+    dispatch(setCartItems(items));
+
+    const cartCount = items.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+    dispatch(setCartCount(cartCount));
+
+    return { success: true, data: res?.data?.data };
+  } catch (error) {
+    dispatch(setCartItems([]));
+    dispatch(setCartCount(0));
+
+    const message =
+      error?.response?.data?.message || "Failed to fetch cart";
+
+    dispatch(setCartError(message));
+
+    return { success: false, message };
+  } finally {
+    dispatch(setCartLoading(false));
+  }
+};
+
+// ================= Add To Cart =================
+export const addToCart =
+  ({ productId, quantity = 1 }) =>
+  async (dispatch, getState) => {
+    dispatch(setCartLoading(true));
+    dispatch(setCartError(null));
+
+    try {
+      const sessionId = getSessionId();
+      const token = getToken(getState().auth);
+
+      await axios.post(
+        API_URL,
+        { productId, quantity },
+        authHeaders(token, sessionId)
+      );
+
+      // refresh cart
+      dispatch(getCart());
+
+      return { success: true };
+    } catch (error) {
+      const message =
+        error?.response?.data?.message || "Failed to add to cart";
+
+      dispatch(setCartError(message));
+
+      return { success: false, message };
+    } finally {
+      dispatch(setCartLoading(false));
+    }
+  };
+
+// ================= Remove Cart Item =================
+export const removeCartItem =
+  (cartItemId) => async (dispatch, getState) => {
+    dispatch(setCartLoading(true));
+    dispatch(setCartError(null));
+
+    try {
+      const sessionId = getSessionId();
+      const token = getToken(getState().auth);
+
+      await axios.delete(
+        `${API_URL}/${cartItemId}`,
+        authHeaders(token, sessionId)
+      );
+
+      dispatch(getCart());
+
+      return { success: true };
+    } catch (error) {
+      const message =
+        error?.response?.data?.message || "Failed to remove item";
+
+      dispatch(setCartError(message));
+
+      return { success: false, message };
+    } finally {
+      dispatch(setCartLoading(false));
+    }
+  };
+
+// ================= Update Cart Item =================
+export const updateCartItem =
+  ({ id, quantity }) =>
+  async (dispatch, getState) => {
+    dispatch(setCartLoading(true));
+    dispatch(setCartError(null));
+
+    try {
+      const sessionId = getSessionId();
+      const token = getToken(getState().auth);
+
+      const res = await axios.patch(
+        `${API_URL}/${id}`,
+        { quantity },
+        authHeaders(token, sessionId)
+      );
+
+      const items = res?.data?.data?.items || [];
+
+      dispatch(setCartItems(items));
+
+      const cartCount = items.reduce(
+        (total, item) => total + (item.quantity || 0),
+        0
+      );
+
+      dispatch(setCartCount(cartCount));
+
+      return { success: true, data: res?.data?.data };
+    } catch (error) {
+      const message =
+        error?.response?.data?.message || "Failed to update item";
+
+      dispatch(setCartError(message));
+
+      return { success: false, message };
+    } finally {
+      dispatch(setCartLoading(false));
+    }
+  };
+
+export default cartSlice.reducer;

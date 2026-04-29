@@ -1,7 +1,8 @@
 What is Bootstrap ?
 
 Bootstrap is one of the popular front-end frameworks which has a nice set of predefined CSS codes.
-The updated version of Bootstrap5 was officially released on 16 June 2020. Bootstrap is a CSS framework that makes mobile-friendly web development and provides responsiveness.
+The updated version of Bootstrap5 was officially released on 16 June 2020. 
+Bootstrap is a CSS framework that makes mobile-friendly web development and provides responsiveness.
 
 The framework is available for free and can be utilized in two ways either by downloading the zip files 
 and incorporating Bootstrap libraries/modules into the project or by directly including the Bootstrap URL 

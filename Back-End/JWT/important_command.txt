@@ -1,0 +1,9 @@
+sudo systemctl start mongod
+sudo systemctl status mongod
+npm start
+http://localhost:8000
+http://localhost:8000/documentation -> for API Documentation GUI
+
+
+
+Bearer <paste token here>
